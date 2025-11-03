@@ -24,6 +24,11 @@ jobs:
         
       - name: Test Code
         run: npm run test
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: test-results
+          path: dist
   deploy:
     runs-on: ubuntu-latest
     steps:
